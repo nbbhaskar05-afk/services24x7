@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexora — Premium Digital Subscriptions &amp; Software Marketplace</title>
+<meta name="description" content="Nexora is a premium digital marketplace for streaming subscriptions, VPN services, software licenses, AI tools and productivity plans — delivered instantly, priced fairly, backed by real support.">
+<meta name="keywords" content="digital subscriptions, streaming plans, vpn services, software licenses, ai tools, digital marketplace, premium accounts">
+<meta name="author" content="Nexora Marketplace">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nexora — Premium Digital Subscriptions & Software Marketplace">
+<meta property="og:description" content="Buy premium streaming subscriptions, VPNs, software licenses and AI tools from one trusted marketplace.">
+<meta property="og:image" content="https://placehold.co/1200x630/0b0e14/6c5ce7?text=Nexora">
+<meta property="og:url" content="https://example.com">
+<meta property="og:site_name" content="Nexora">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+<style>
+  :root{
+    --bg: #0b0e14;
+    --bg-soft: #11151f;
+    --surface: #161b28;
+    --surface-2: #1c2233;
+    --line: #262d40;
+    --text: #edeff5;
+    --muted: #8b93a7;
+    --violet: #6c5ce7;
+    --violet-soft: rgba(108,92,231,0.15);
+    --teal: #00d9c0;
+    --gold: #f5b942;
+    --font-display: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height:1.6;
+  }
+  h1,h2,h3,h4{ font-family: var(--font-display); margin:0; letter-spacing:-0.02em; }
+  p{ margin:0; }
+  a{ color:inherit; text-decoration:none; }
+  ul{ list-style:none; margin:0; padding:0; }
+  img{ max-width:100%; display:block; }
+  button{ font-family:inherit; cursor:pointer; }
+  .container{ max-width:1240px; margin:0 auto; padding:0 24px; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:0.75rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase;
+    color: var(--teal); margin-bottom:14px;
+  }
+  .eyebrow::before{ content:""; width:18px; height:2px; background:var(--teal); display:inline-block; }
+  section{ padding:96px 0; position:relative; }
+  .section-head{ max-width:640px; margin-bottom:56px; }
+  .section-head p{ color:var(--muted); margin-top:14px; font-size:1.05rem; }
+
+  /* animations */
+  @keyframes floatY{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-16px);} }
+  @keyframes drift{ 0%{ transform:translate(0,0) scale(1);} 50%{ transform:translate(30px,-20px) scale(1.08);} 100%{ transform:translate(0,0) scale(1);} }
+  @keyframes fadeUp{ from{ opacity:0; transform:translateY(24px);} to{ opacity:1; transform:translateY(0);} }
+  @keyframes marquee{ from{ transform:translateX(0);} to{ transform:translateX(-50%);} }
+  @keyframes pulseGlow{ 0%,100%{ box-shadow:0 0 0 0 rgba(108,92,231,0.35);} 50%{ box-shadow:0 0 0 10px rgba(108,92,231,0);} }
+
+  .reveal{ opacity:0; animation: fadeUp 0.7s ease forwards; }
+  .reveal.d1{ animation-delay:.08s; } .reveal.d2{ animation-delay:.16s; } .reveal.d3{ animation-delay:.24s; }
+  .reveal.d4{ animation-delay:.32s; } .reveal.d5{ animation-delay:.4s; } .reveal.d6{ animation-delay:.48s; }
+
+  /* ---------- HEADER ---------- */
+  #site-header{
+    position: sticky; top:0; z-index:100;
+    background: rgba(11,14,20,0.78);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-wrap{ display:flex; align-items:center; justify-content:space-between; gap:24px; padding:16px 24px; }
+  .logo{ display:flex; align-items:center; gap:10px; font-family:var(--font-display); font-weight:700; font-size:1.25rem; }
+  .logo-mark{ width:34px; height:34px; border-radius:10px; background:linear-gradient(135deg,var(--violet),var(--teal)); display:flex; align-items:center; justify-content:center; font-size:0.9rem; animation: pulseGlow 2.6s infinite; }
+  #primary-nav ul{ display:flex; gap:28px; }
+  #primary-nav a{ font-size:0.92rem; color:var(--muted); font-weight:500; transition:.2s color; position:relative; }
+  #primary-nav a:hover{ color:var(--text); }
+  #primary-nav a::after{ content:""; position:absolute; left:0; bottom:-6px; width:0; height:2px; background:var(--teal); transition:.25s width; }
+  #primary-nav a:hover::after{ width:100%; }
+
+  .nav-actions{ display:flex; align-items:center; gap:14px; }
+  #site-search{ display:flex; align-items:center; gap:8px; background:var(--surface); border:1px solid var(--line); border-radius:999px; padding:8px 14px; }
+  #site-search input{ background:transparent; border:none; outline:none; color:var(--text); font-size:0.88rem; width:150px; }
+  #site-search input::placeholder{ color:var(--muted); }
+  .icon-btn{ background:var(--surface); border:1px solid var(--line); width:38px; height:38px; border-radius:10px; display:flex; align-items:center; justify-content:center; color:var(--text); position:relative; transition:.2s border-color, .2s transform; }
+  .icon-btn:hover{ border-color:var(--violet); transform:translateY(-2px); }
+  .cart-count{ position:absolute; top:-6px; right:-6px; background:var(--teal); color:#04211d; font-size:0.65rem; font-weight:700; width:18px; height:18px; border-radius:50%; display:flex; align-items:center; justify-content:center; }
+  .btn{ display:inline-flex; align-items:center; gap:8px; padding:11px 22px; border-radius:10px; font-weight:600; font-size:0.9rem; border:1px solid transparent; transition:.25s transform, .25s box-shadow, .25s background; }
+  .btn:hover{ transform:translateY(-3px); }
+  .btn-primary{ background:linear-gradient(135deg,var(--violet),#8b7bff); color:#fff; box-shadow:0 10px 24px -8px rgba(108,92,231,0.6); }
+  .btn-primary:hover{ box-shadow:0 16px 32px -8px rgba(108,92,231,0.75); }
+  .btn-outline{ border-color:var(--line); color:var(--text); background:var(--surface); }
+  .btn-outline:hover{ border-color:var(--teal); }
+  .btn-whatsapp{ background:#1f9e5a; color:#fff; }
+  .btn-whatsapp:hover{ box-shadow:0 14px 26px -10px rgba(31,158,90,0.7); }
+  #mobile-menu-btn{ display:none; }
+
+  /* ---------- HERO ---------- */
+  #hero{ overflow:hidden; padding-top:110px; }
+  .hero-blob{ position:absolute; border-radius:50%; filter:blur(70px); opacity:0.45; z-index:0; animation: drift 10s ease-in-out infinite; }
+  .hero-blob.b1{ width:380px; height:380px; background:var(--violet); top:-80px; right:-60px; }
+  .hero-blob.b2{ width:300px; height:300px; background:var(--teal); bottom:-60px; left:-60px; animation-delay:2s; }
+  .hero-grid{ position:relative; z-index:1; display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:center; }
+  #hero h1{ font-size:clamp(2.2rem,4.4vw,3.4rem); line-height:1.1; }
+  #hero h1 span{ background:linear-gradient(135deg,var(--teal),var(--violet)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .hero-subtitle{ color:var(--muted); font-size:1.08rem; margin:22px 0 34px; max-width:520px; }
+  .hero-actions{ display:flex; gap:16px; flex-wrap:wrap; }
+  .trust-badges{ display:flex; gap:28px; margin-top:48px; flex-wrap:wrap; }
+  .trust-badges div{ display:flex; align-items:center; gap:8px; color:var(--muted); font-size:0.85rem; }
+  .trust-badges i{ color:var(--teal); }
+  .hero-visual{ position:relative; }
+  .hero-visual img{ border-radius:24px; border:1px solid var(--line); animation: floatY 5s ease-in-out infinite; }
+  .hero-float-card{ position:absolute; background:var(--surface); border:1px solid var(--line); padding:14px 16px; border-radius:14px; display:flex; align-items:center; gap:10px; font-size:0.82rem; box-shadow:0 20px 40px -20px rgba(0,0,0,0.6); animation: floatY 6s ease-in-out infinite; }
+  .hero-float-card.fc1{ top:10%; left:-30px; animation-delay:.4s; }
+  .hero-float-card.fc2{ bottom:8%; right:-20px; animation-delay:1s; }
+
+  /* marquee */
+  .marquee-wrap{ overflow:hidden; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:22px 0; background:var(--bg-soft); }
+  .marquee-track{ display:flex; gap:64px; width:max-content; animation: marquee 24s linear infinite; }
+  .marquee-track span{ color:var(--muted); font-family:var(--font-display); font-weight:600; font-size:0.95rem; white-space:nowrap; }
+
+  /* ---------- FEATURES ---------- */
+  .feature-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .feature-card{ background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:28px; transition:.3s transform,.3s border-color; }
+  .feature-card:hover{ transform:translateY(-6px); border-color:var(--violet); }
+  .feature-icon{ width:48px; height:48px; border-radius:12px; background:var(--violet-soft); color:var(--violet); display:flex; align-items:center; justify-content:center; font-size:1.2rem; margin-bottom:18px; }
+  .feature-card h3{ font-size:1.05rem; margin-bottom:8px; }
+  .feature-card p{ color:var(--muted); font-size:0.92rem; }
+
+  /* ---------- CATEGORIES ---------- */
+  .category-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .category-card{ background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:24px; display:flex; align-items:center; gap:16px; transition:.25s transform,.25s border-color,.25s background; }
+  .category-card:hover{ transform:translateY(-4px); border-color:var(--teal); background:var(--surface-2); }
+  .category-icon{ width:52px; height:52px; flex:0 0 auto; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:1.3rem; background:linear-gradient(135deg,var(--violet),var(--teal)); color:#fff; }
+  .category-card h3{ font-size:1rem; margin-bottom:4px; }
+  .category-card span{ color:var(--muted); font-size:0.82rem; }
+
+  /* ---------- SEARCH / FILTER BAR ---------- */
+  #catalog-tools{ background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:20px 24px; display:flex; flex-wrap:wrap; gap:14px; align-items:center; justify-content:space-between; margin-bottom:48px; }
+  .filter-group{ display:flex; gap:12px; flex-wrap:wrap; }
+  .filter-group select, .filter-group input{
+    background:var(--bg-soft); border:1px solid var(--line); color:var(--text);
+    padding:10px 14px; border-radius:10px; font-size:0.86rem; outline:none;
+  }
+  #catalog-search{ display:flex; align-items:center; gap:10px; background:var(--bg-soft); border:1px solid var(--line); border-radius:10px; padding:10px 14px; min-width:240px; }
+  #catalog-search input{ border:none; background:transparent; width:100%; }
+
+  /* ---------- PRODUCT CARDS ---------- */
+  .product-category-block{ margin-bottom:72px; }
+  .product-category-block > h3{ font-size:1.4rem; margin-bottom:22px; display:flex; align-items:center; gap:12px; }
+  .product-category-block > h3 i{ color:var(--teal); }
+  .product-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+  .product-card{
+    background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:22px;
+    display:flex; flex-direction:column; gap:12px; position:relative; overflow:hidden;
+    transition:.3s transform,.3s border-color,.3s box-shadow;
+  }
+  .product-card:hover{ transform:translateY(-8px); border-color:var(--violet); box-shadow:0 24px 40px -20px rgba(108,92,231,0.35); }
+  .product-card::before{
+    content:""; position:absolute; inset:0; background:radial-gradient(120px circle at var(--x,50%) var(--y,0%), rgba(108,92,231,0.12), transparent 60%);
+    opacity:0; transition:.3s opacity; pointer-events:none;
+  }
+  .product-card:hover::before{ opacity:1; }
+  .product-card-top{ display:flex; align-items:center; justify-content:space-between; }
+  .product-logo{ width:52px; height:52px; border-radius:12px; overflow:hidden; border:1px solid var(--line); background:#fff; }
+  .wishlist-btn{ background:transparent; border:none; color:var(--muted); font-size:1.05rem; transition:.2s color, .2s transform; }
+  .wishlist-btn:hover{ color:#ff5c8a; transform:scale(1.15); }
+  .category-badge{ align-self:flex-start; background:var(--violet-soft); color:var(--violet); font-size:0.68rem; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; padding:5px 10px; border-radius:999px; }
+  .product-card h4{ font-size:1.05rem; }
+  .product-desc{ color:var(--muted); font-size:0.84rem; min-height:38px; }
+  .plans-row{ display:flex; gap:6px; flex-wrap:wrap; }
+  .plan-chip{ font-size:0.72rem; border:1px solid var(--line); color:var(--muted); padding:4px 9px; border-radius:999px; }
+  .price-row{ display:flex; align-items:baseline; gap:8px; margin-top:4px; }
+  .price-row .price{ font-family:var(--font-display); font-size:1.3rem; font-weight:700; color:var(--gold); }
+  .price-row .price-old{ color:var(--muted); text-decoration:line-through; font-size:0.85rem; }
+  .availability{ display:inline-flex; align-items:center; gap:6px; font-size:0.75rem; color:var(--teal); font-weight:600; }
+  .availability i{ font-size:0.55rem; animation: pulseGlow 2s infinite; border-radius:50%; }
+  .card-actions{ display:flex; gap:8px; margin-top:6px; }
+  .card-actions .btn{ padding:9px 14px; font-size:0.82rem; flex:1; justify-content:center; }
+  .quick-view-btn{ background:transparent; border:1px dashed var(--line); color:var(--muted); border-radius:10px; padding:9px; font-size:0.78rem; transition:.2s border-color,.2s color; }
+  .quick-view-btn:hover{ border-color:var(--teal); color:var(--teal); }
+  .show-more-wrap{ text-align:center; margin-top:8px; }
+
+  /* ---------- WHY CHOOSE US ---------- */
+  .why-grid{ display:grid; grid-template-columns:repeat(5,1fr); gap:18px; }
+  .why-card{ text-align:center; padding:26px 16px; border-radius:16px; border:1px solid var(--line); background:var(--surface); }
+  .why-card i{ font-size:1.6rem; color:var(--gold); margin-bottom:14px; }
+  .why-card h4{ font-size:0.92rem; margin-bottom:6px; }
+  .why-card p{ font-size:0.78rem; color:var(--muted); }
+
+  /* ---------- REVIEWS ---------- */
+  .review-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  .review-card{ background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:26px; }
+  .review-head{ display:flex; align-items:center; gap:12px; margin-bottom:14px; }
+  .review-avatar{ width:46px; height:46px; border-radius:50%; overflow:hidden; border:1px solid var(--line); }
+  .review-name{ font-weight:600; font-size:0.95rem; }
+  .review-rating{ color:var(--gold); font-size:0.78rem; }
+  .review-text{ color:var(--muted); font-size:0.88rem; }
+
+  /* ---------- FAQ ---------- */
+  #faq-list{ max-width:760px; margin:0 auto; }
+  .faq-item{ border-bottom:1px solid var(--line); }
+  .faq-question{ width:100%; background:transparent; border:none; color:var(--text); display:flex; justify-content:space-between; align-items:center; padding:20px 4px; font-family:var(--font-display); font-size:1rem; text-align:left; }
+  .faq-question i{ transition:.3s transform; color:var(--teal); }
+  .faq-item[data-open="true"] .faq-question i{ transform:rotate(45deg); }
+  .faq-answer{ max-height:0; overflow:hidden; transition:.3s max-height; color:var(--muted); font-size:0.9rem; padding:0 4px; }
+  .faq-item[data-open="true"] .faq-answer{ max-height:220px; padding-bottom:18px; }
+
+  /* ---------- NEWSLETTER ---------- */
+  #newsletter{ background:linear-gradient(135deg,var(--surface),var(--surface-2)); border-radius:24px; border:1px solid var(--line); padding:56px; text-align:center; margin:0 24px; }
+  #newsletter h2{ font-size:1.8rem; margin-bottom:12px; }
+  #newsletter p{ color:var(--muted); margin-bottom:28px; }
+  .newsletter-form{ display:flex; justify-content:center; gap:12px; max-width:460px; margin:0 auto; flex-wrap:wrap; }
+  .newsletter-form input{ flex:1; min-width:220px; background:var(--bg-soft); border:1px solid var(--line); color:var(--text); padding:13px 16px; border-radius:10px; outline:none; }
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid{ display:grid; grid-template-columns:repeat(5,1fr); gap:16px; }
+  .contact-card{ background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:24px; text-align:center; transition:.25s transform,.25s border-color; }
+  .contact-card:hover{ transform:translateY(-6px); border-color:var(--violet); }
+  .contact-card i{ font-size:1.4rem; margin-bottom:10px; color:var(--teal); }
+  .contact-card h4{ font-size:0.9rem; }
+
+  /* ---------- FOOTER ---------- */
+  #site-footer{ background:var(--bg-soft); border-top:1px solid var(--line); padding-top:72px; }
+  .footer-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:32px; padding-bottom:48px; }
+  .footer-brand p{ color:var(--muted); font-size:0.88rem; margin-top:14px; max-width:280px; }
+  .footer-col h4{ font-size:0.88rem; margin-bottom:16px; text-transform:uppercase; letter-spacing:0.06em; color:var(--muted); }
+  .footer-col ul li{ margin-bottom:10px; }
+  .footer-col a{ color:var(--text); font-size:0.9rem; opacity:0.85; transition:.2s opacity; }
+  .footer-col a:hover{ opacity:1; color:var(--teal); }
+  .footer-social{ display:flex; gap:10px; margin-top:18px; }
+  .footer-bottom{ border-top:1px solid var(--line); padding:22px 0; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; color:var(--muted); font-size:0.82rem; }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 1024px){
+    .product-grid{ grid-template-columns:repeat(2,1fr); }
+    .why-grid{ grid-template-columns:repeat(3,1fr); }
+    .contact-grid{ grid-template-columns:repeat(3,1fr); }
+    .footer-grid{ grid-template-columns:1fr 1fr; }
+  }
+  @media (max-width: 860px){
+    #primary-nav, #site-search{ display:none; }
+    #mobile-menu-btn{ display:flex; }
+    .hero-grid{ grid-template-columns:1fr; }
+    .feature-grid, .category-grid, .review-grid{ grid-template-columns:1fr 1fr; }
+    .why-grid{ grid-template-columns:1fr 1fr; }
+  }
+  @media (max-width: 560px){
+    .product-grid, .feature-grid, .category-grid, .review-grid, .why-grid, .contact-grid{ grid-template-columns:1fr; }
+    .footer-grid{ grid-template-columns:1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.001s !important; animation-iteration-count:1 !important; transition-duration:0.001s !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header id="site-header">
+  <div class="nav-wrap container">
+    <a href="#hero" class="logo" aria-label="Nexora home">
+      <span class="logo-mark" aria-hidden="true">N</span>
+      Nexora
+    </a>
+
+    <nav id="primary-nav" aria-label="Primary navigation">
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-actions">
+      <form id="site-search" role="search" aria-label="Search products">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <input type="search" id="nav-search-input" placeholder="Search Netflix, VPN, Canva…" aria-label="Search products">
+      </form>
+      <button class="icon-btn" id="login-btn" aria-label="Login to your account">
+        <i class="fa-regular fa-user"></i>
+      </button>
+      <button class="icon-btn" id="cart-btn" aria-label="View cart">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-count" id="cart-count">0</span>
+      </button>
+      <button class="icon-btn" id="mobile-menu-btn" aria-label="Open mobile menu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section id="hero">
+  <span class="hero-blob b1" aria-hidden="true"></span>
+  <span class="hero-blob b2" aria-hidden="true"></span>
+  <div class="container hero-grid">
+    <div class="hero-copy reveal">
+      <span class="eyebrow">Trusted Digital Marketplace</span>
+      <h1>Premium Digital Subscriptions &amp; <span>Software Marketplace</span></h1>
+      <p class="hero-subtitle">Buy premium streaming subscriptions, VPNs, software licenses, AI tools and digital services from one place — delivered instantly and backed by real support.</p>
+      <div class="hero-actions">
+        <a href="#products" class="btn btn-primary"><i class="fa-solid fa-bag-shopping"></i> Browse Products</a>
+        <a href="#contact" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Contact on WhatsApp</a>
+      </div>
+      <div class="trust-badges">
+        <div><i class="fa-solid fa-shield-halved"></i> Secure Checkout</div>
+        <div><i class="fa-solid fa-bolt"></i> Instant Delivery</div>
+        <div><i class="fa-solid fa-headset"></i> 24/7 Support</div>
+      </div>
+    </div>
+    <div class="hero-visual reveal d2">
+      <img src="https://placehold.co/560x460/161b28/6c5ce7?text=Nexora+Dashboard" alt="Nexora marketplace dashboard preview showing subscription plans">
+      <div class="hero-float-card fc1"><i class="fa-solid fa-circle-check" style="color:var(--teal)"></i> Order delivered in 2 min</div>
+      <div class="hero-float-card fc2"><i class="fa-solid fa-star" style="color:var(--gold)"></i> 4.9/5 from 12,000+ orders</div>
+    </div>
+  </div>
+
+  <div class="marquee-wrap" aria-label="Popular product brands strip">
+    <div class="marquee-track">
+      <span>Netflix</span><span>Spotify</span><span>YouTube Premium</span><span>NordVPN</span><span>Microsoft 365</span><span>Canva</span><span>Disney+</span><span>Adobe Express</span><span>Grammarly</span><span>ExpressVPN</span>
+      <span>Netflix</span><span>Spotify</span><span>YouTube Premium</span><span>NordVPN</span><span>Microsoft 365</span><span>Canva</span><span>Disney+</span><span>Adobe Express</span><span>Grammarly</span><span>ExpressVPN</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FEATURES ================= -->
+<section id="features">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Why It Works</span>
+      <h2>Built for a smooth buying experience</h2>
+      <p>Every order on Nexora follows the same reliable process, from checkout to delivery.</p>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card reveal d1"><div class="feature-icon"><i class="fa-solid fa-bolt"></i></div><h3>Instant Delivery</h3><p>Most orders are activated within minutes of payment confirmation.</p></div>
+      <div class="feature-card reveal d2"><div class="feature-icon"><i class="fa-solid fa-tag"></i></div><h3>Affordable Prices</h3><p>Transparent pricing on every plan, with no hidden fees at checkout.</p></div>
+      <div class="feature-card reveal d3"><div class="feature-icon"><i class="fa-solid fa-lock"></i></div><h3>Secure Payments</h3><p>Encrypted checkout supporting all major payment methods.</p></div>
+      <div class="feature-card reveal d4"><div class="feature-icon"><i class="fa-solid fa-medal"></i></div><h3>Trusted Seller</h3><p>Thousands of verified reviews across our marketplace channels.</p></div>
+      <div class="feature-card reveal d5"><div class="feature-icon"><i class="fa-solid fa-headset"></i></div><h3>Premium Support</h3><p>Real humans on chat and WhatsApp, ready before and after purchase.</p></div>
+      <div class="feature-card reveal d6"><div class="feature-icon"><i class="fa-solid fa-arrows-rotate"></i></div><h3>Fast Replacement</h3><p>Covered plans are replaced quickly if an issue ever comes up.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CATEGORIES ================= -->
+<section id="categories">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Shop by Category</span>
+      <h2>Everything digital, organized simply</h2>
+      <p>Jump straight to the kind of plan you're after.</p>
+    </div>
+    <div class="category-grid">
+      <a href="#cat-streaming" class="category-card reveal d1"><span class="category-icon"><i class="fa-solid fa-clapperboard"></i></span><div><h3>Streaming &amp; Entertainment</h3><span>40+ platforms</span></div></a>
+      <a href="#cat-vpn" class="category-card reveal d2"><span class="category-icon"><i class="fa-solid fa-shield-halved"></i></span><div><h3>VPN Services</h3><span>10 providers</span></div></a>
+      <a href="#cat-software" class="category-card reveal d3"><span class="category-icon"><i class="fa-solid fa-laptop-code"></i></span><div><h3>Software</h3><span>Licenses &amp; suites</span></div></a>
+      <a href="#cat-software" class="category-card reveal d4"><span class="category-icon"><i class="fa-solid fa-robot"></i></span><div><h3>AI Tools</h3><span>Writing, voice &amp; design</span></div></a>
+      <a href="#cat-software" class="category-card reveal d5"><span class="category-icon"><i class="fa-solid fa-file-lines"></i></span><div><h3>Office Productivity</h3><span>Docs, sheets &amp; notes</span></div></a>
+      <a href="#cat-software" class="category-card reveal d6"><span class="category-icon"><i class="fa-solid fa-palette"></i></span><div><h3>Design Tools</h3><span>Canva, Figma &amp; more</span></div></a>
+      <a href="#cat-streaming" class="category-card reveal d1"><span class="category-icon"><i class="fa-solid fa-graduation-cap"></i></span><div><h3>Educational Plans</h3><span>Courses &amp; learning</span></div></a>
+      <a href="#cat-streaming" class="category-card reveal d2"><span class="category-icon"><i class="fa-solid fa-music"></i></span><div><h3>Music</h3><span>Streaming &amp; audio</span></div></a>
+      <a href="#cat-streaming" class="category-card reveal d3"><span class="category-icon"><i class="fa-solid fa-futbol"></i></span><div><h3>Sports Streaming</h3><span>Live leagues &amp; events</span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRODUCT CATALOG ================= -->
+<section id="products">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Catalog</span>
+      <h2>Browse the full marketplace</h2>
+      <p>Filter, sort and search across hundreds of plans. New cards can be added to any category below using the same reusable product-card markup.</p>
+    </div>
+
+    <!-- Search & Filters -->
+    <div id="catalog-tools" role="search" aria-label="Catalog filters">
+      <div id="catalog-search">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <input type="search" id="catalog-search-input" placeholder="Search products…" aria-label="Search catalog">
+      </div>
+      <div class="filter-group">
+        <select id="filter-category" aria-label="Filter by category">
+          <option value="">All Categories</option>
+          <option value="streaming">Streaming &amp; Entertainment</option>
+          <option value="vpn">VPN Services</option>
+          <option value="software">Software &amp; AI Tools</option>
+        </select>
+        <select id="filter-duration" aria-label="Filter by duration">
+          <option value="">Any Duration</option>
+          <option value="1m">1 Month</option>
+          <option value="3m">3 Months</option>
+          <option value="12m">12 Months</option>
+        </select>
+        <select id="filter-price" aria-label="Filter by price range">
+          <option value="">Any Price</option>
+          <option value="low">Under $10</option>
+          <option value="mid">$10 – $30</option>
+          <option value="high">$30+</option>
+        </select>
+        <select id="sort-by" aria-label="Sort products">
+          <option value="popular">Sort: Popular</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+          <option value="newest">Newest</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- ===== STREAMING & ENTERTAINMENT ===== -->
+    <div class="product-category-block" id="cat-streaming">
+      <h3><i class="fa-solid fa-clapperboard"></i> Streaming &amp; Entertainment</h3>
+      <div class="product-grid">
+
+        <article class="product-card" data-category="streaming" data-price="6.99">
+          <div class="product-card-top">
+            <span class="product-logo"><img src="https://placehold.co/100x100/e50914/ffffff?text=NF" alt="Netflix logo placeholder"></span>
+            <button class="wishlist-btn" aria-label="Add Netflix to wishlist"><i class="fa-regular fa-heart"></i></button>
+          </div>
+          <span class="category-badge">Streaming</span>
+          <h4>Netflix Premium</h4>
+          <p class="product-desc">Shared &amp; private 4K UHD streaming plans on up to 4 screens.</p>
+          <div class="plans-row"><span class="plan-chip">1 Month</span><span class="plan-chip">3 Months</span><span class="plan-chip">12 Months</span></div>
+          <div class="price-row"><span class="price">$6.99</span><span class="price-old">$15.99</span></div>
+          <span class="availability"><i class="fa-solid fa-circle"></i> In Stock</span>
+          <div class="card-actions">
+            <a href="#" class="btn btn-primary">Buy Now</a>
+            <a href="#" class="btn btn-whatsapp" aria-label="Ask about Netflix on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+          <button class="quick-view-btn">Quick View</button>
+        </article>
+
+        <article class="product-card" data-category="streaming" data-price="5.49">
+          <div class="product-card-top">
+            <span class="product-logo"><img src="https://placehold.co/100x100/ff0000/ffffff?text=YT" alt="YouTube Premium logo placeholder"></span>
+            <button class="wishlist-btn" aria-label="Add YouTube Premium to wishlist"><i class="fa-regular fa-heart"></i></button>
+          </div>
+          <span class="category-badge">Streaming</span>
+          <h4>YouTube Premium</h4>
+          <p class="product-desc">Ad-free viewing, background play and YouTube Music included.</p>
+          <div class="plans-row"><span class="plan-chip">1 Month</span><span class="plan-chip">12 Months</span></div>
+          <div class="price-row"><span class="price">$5.49</span></div>
+          <span class="availability"><i class="fa-solid fa-circle"></i> In Stock</span>
+          <div class="card-actions">
+            <a href="#" class="btn btn-primary">Buy Now</a>
+            <a href="#" class="btn btn-whatsapp" aria-label="Ask about YouTube Premium on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+          <button class="quick-view-btn">Quick View</button>
+        </article>
+
+        <article class="product-card" data-category="streaming" data-price="4.29">
+          <div class="product-card-top">
+            <span class="product-logo"><img src="https://placehold.co/100x100/1db954/000000?text=SP" alt="Spotify Premium logo placeholder"></span>
+            <button class="wishlist-btn" aria-label="Add Spotify Premium to wishlist"><i class="fa-regular fa-heart"></i></button>
+          </div>
+          <span class="category-badge">Streaming</span>
+          <h4>Spotify Premium</h4>
+          <p class="product-desc">Ad-free music, offline downloads and unlimited skips.</p>
+          <div class="plans-row"><span class="plan-chip">1 Month</span><span class="plan-chip">3 Months</span></div>
+          <div class="price-row"><span class="price">$4.29</span></div>
+          <span class="availability"><i class="fa-solid fa-circle"></i> In Stock</span>
+          <div class="card-actions">
+            <a href="#" class="btn btn-primary">Buy Now</a>
+            <a href="#" class="btn btn-whatsapp" aria-label="Ask about Spotify Premium on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+          <button class="quick-view-btn">Quick View</button>
+        </article>
+
+        <article class="product-card" data-category="streaming" data-price="9.99">
+          <div class="product-card-top">
+            <span class="product-logo"><img src="https://placehold.co/100x100/113ccf/ffffff?text=D%2B" alt="Disney+ logo placeholder"></span>
+            <button class="wishlist-btn" aria-label="Add Disney+ to wishlist"><i class="fa-regular fa-heart"></i></button>
+          </div>
+          <span class="category-badge">Streaming</span>
+          <h4>Disney+</h4>
+          <p class="product-desc">Family-friendly catalog spanning animation, originals and classics.</p>
+          <div class="plans-row"><span class="plan-chip">1 Month</span><span class="plan-chip">12 Months</span></div>
+          <div class="price-row"><span class="price">$9.99</span></div>
+          <span class="availability"><i class="fa-solid fa-circle"></i> In Stock</span>
+          <div class="card-actions">
+            <a href="#" class="btn btn-primary">Buy Now</a>
+            <a href="#" class="btn btn-whatsapp" aria-label="Ask about Disney+ on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+          <button class="quick-view-btn">Quick View</button>
+        </article>
+
+        <article class="product-card" data-category="streaming" data-price="12.99">
+          <div class="product-card-top">
+            <span class="product-logo"><img src="https://placehold.co/100x100/8e44ef/ffffff?text=HBO" alt="HBO Max logo placeholder"></span>
+            <button class="wishlist-btn" aria-label="Add HBO Max to wishlist"><i class="fa-regular fa-heart"></i></button>
+          </div>
+          <span class="category-badge">Streaming</span>
+          <h4>HBO Max</h4>
+          <p class="product-desc">Prestige series, new releases and a deep film library.</p>
+          <div class="plans-row"><span class="plan-chip">1 Month</span><span class="plan-chip">3 Months</span></div>
+          <div class="price-row"><span class="price">$12.99</span></div>
+          <span class="availability"><i class="fa-solid fa-circle"></i> In Stock</span>
+          <div class="card-actions">
+            <a href="#" class="btn btn-primary">Buy Now</a>
+            <a href="#" class="btn btn-whatsapp" aria-label="Ask about HBO Max on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+          <button class="quick-view-btn">Quick View</button>
+        </article>
+
+        <article class="product-card" data-category="streaming" data-price="7.49">
+          <div class="product-card-top">
+            <span class="product-logo"><img src="https://placehold.co/100x100/f47521/ffffff?text=CR" alt="Crunchyroll logo placeholder"></span>
+            <button class="wishlist-btn" aria-label="Add Crunchyroll to wishlist"><i class="fa-regular fa-heart"></i></button>
+          </div>
+          <span class="category-badge">Streaming</span>
+          <h4>Crunchyroll</h4>
+          <p class="product-desc">Simulcast anime, dubs and an extensive back catalog.</p>
+          <div class="plans-row"><span class="plan-chip">1 Month</span><span class="plan-chip">12 Months</span></div>
+          <div class="price-row"><span class="price">$7.49</span></div>
+          <span class="availability"><i class="fa-solid fa-circle"></i> In Stock</span>
+          <div class="card-actions">
+            <a href="#" class="btn btn-primary">Buy Now</a>
+            <a href="#" class="btn btn-whatsapp" aria-label="Ask about Crunchyroll on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+          <button class="quick-view-btn">Quick View</button>
+        </article>
+
+        <article class="product-card" data-category="streaming" data-price="8.99">
+          <div class="product-card-top">
+            <span class="product-logo"><img src="https://placehold.co/100x100/000000/ffffff?text=ESPN%2B" alt="ESPN+ logo placeholder"></span>
+            <button class="wishlist-btn" aria-label="Add ESPN+ to wishlist"><i class="fa-regular fa-heart"></i></button>
+          </div>
+          <span class="category-badge">Sports Streaming</span>
+          <h4>ESPN+</h4>
+          <p class="product-desc">Live sports, exclusive originals and on-demand replays.</p>
+          <div class="plans-row"><span class="plan-chip">1 Month</span><span class="plan-chip">12 Months</span></div>
+          <div class="price-row"><span class="price">$8.99</span></div>
+          <span class="availability"><i class="fa-solid fa-circle"></i> In Stock</span>
+          <div class="card-actions">
+            <a href="#" class="btn btn-primary">Buy Now</a>
+            <a href="#" class="btn btn-whatsapp" aria-label="Ask about ESPN+ on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+          <button class="quick-view-btn">Quick View</button>
+        </article>
+
+        <article class="product-card" data-category="streaming" data-price="3.99">
+          <div class="product-card-top">
+            <span class="product-logo"><img src="https://placehold.co/100x100/c8a24a/000000?text=HC" alt="Hoichoi logo placeholder"></span>
+            <button class="wishlist-btn" aria-label="Add Hoichoi to wishlist"><i class="fa-regular fa-heart"></i></button>
+          </div>
+          <span class="category-badge">Streaming</span>
+          <h4>Hoichoi</h4>
+          <p class="product-desc">Regional originals, films and web series in one bundle.</p>
+          <div class="plans-row"><span class="plan-chip">1 Month</span><span class="plan-chip">12 Months</span></div>
+          <div class="price-row"><span class="price">$3.99</span></div>
+          <span class="availability"><i class="fa-solid fa-circle"></i> In Stock</span>
+          <div class="card-actions">
+            <a href="#" class="btn btn-primary">Buy Now</a>
+            <a href="#" class="btn btn-whatsapp" aria-label="Ask about Hoichoi on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+          <button class="quick-view-btn">Quick View</button>
+        </article>
+
+      </div>
+      <div class="show-more-wrap"><button class="btn btn-outline" id="show-more-streaming">Show More Streaming Plans <i class="fa-solid fa-chevron-down"></i></button></div>
+    </div>
+
+    <!-- ===== VPN SERVICES ===== -->
+    <div class="product-category-block" id="cat-vpn">
+      <h3><i class="fa-solid fa-shield-halved"></i> VPN Services</h3>
+      <div class="product-grid">
+
+        <article class="product-card" data-category="vpn" data-price="3.29">
+          <div class="product-card-top">
+            <span class="product-logo"><img src="https://placehold.co/100x100/4687ff/ffffff?text=NV" alt="NordVPN logo placeholder"></span>
+            <button class="wishlist-btn" aria-label="Add NordVPN to wishlist"><i class="fa-regular fa-heart"></i></button>
+          </div>
+          <span class="category-badge">VPN</span>
+          <h4>NordVPN</h4>
+          <p class="product-desc">High-speed servers across 60+ countries with a strict no-logs policy.</p>
+          <div class="plans-row"><span class="plan-chip">1 Month</span><span class="plan-chip">12 Months</span></div>
+          <div class="price-row"><span class="price">$3.29</span></div>
+          <span class="availability"><i class="fa-solid fa-circle"></i> In Stock</span>
+          <div class="card-actions">
+            <a href="#" class="btn btn-primary">Buy Now</a>
+            <a href="#" class="btn btn-whatsapp" aria-label="Ask about NordVPN on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+          <button class="quick-view-btn">Quick View</button>
+        </article>
+
+        <article class="product-card" data-category="vpn" data-price="2.49">
+          <div class="product-card-top">
+            <span class="product-logo"><img src="https://placehold.co/100x100/1ee6b7/000000?text=SS" alt="Surfshark logo placeholder"></span>
+            <button class="wishlist-btn" aria-label="Add Surfshark to wishlist"><i class="fa-regular fa-heart"></i></button>
+          </div>
+          <span class="category-badge">VPN</span>
+          <h4>Surfshark</h4>
+          <p class="product-desc">Unlimited devices on one plan with built-in ad and tracker blocking.</p>
+          <div class="plans-row"><span class="plan-chip">1 Month</span><span class="plan-chip">12 Months</span></div>
+          <div class="price-row"><span class="price">$2.49</span></div>
+          <span class="availability"><i class="fa-solid fa-circle"></i> In Stock</span>
+          <div class="card-actions">
+            <a href="#" class="btn btn-primary">Buy Now</a>
+            <a href="#" class="btn btn-whatsapp" aria-label="Ask about Surfshark on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+          <button class="quick-view-btn">Quick View</button>
+        </article>
+
+        <article class="product-card" data-category="vpn" data-price="4.99">
+          <div class="product-card-top">
+            <span class="product-logo"><img src="https://placehold.co/100x100/da291c/ffffff?text=EV" alt="ExpressVPN logo placeholder"></span>
+            <button class="wishlist-btn" aria-label="Add ExpressVPN to wishlist"><i class="fa-regular fa-heart"></i></button>
+          </div>
+          <span class="category-badge">VPN</span>
+          <h4>ExpressVPN</h4>
+          <p class="product-desc">Consistently fast speeds with servers in 90+ countries.</p>
+          <div class="plans-row"><span class="plan-chip">1 Month</span><span class="plan-chip">12 Months</span></div>
+          <div class="price-row"><span class="price">$4.99</span></div>
+          <span class="availability"><i class="fa-solid fa-circle"></i> In Stock</span>
+          <div class="card-actions">
+            <a href="#" class="btn btn-primary">Buy Now</a>
+            <a href="#" class="btn btn-whatsapp" aria-label="Ask about ExpressVPN on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+          <button class="quick-view-btn">Quick View</button>
+        </article>
+
+        <article class="product-card" data-category="vpn" data-price="1.99">
+          <div class="product-card-top">
+            <span class="product-logo"><img src="https://placehold.co/100x100/6b46c1/ffffff?text=PV" alt="Proton VPN logo placeholder"></span>
+            <button class="wishlist-btn" aria-label="Add Proton VPN to wishlist"><i class="fa-regular fa-heart"></i></button>
+          </div>
+          <span class="category-badge">VPN</span>
+          <h4>Proton VPN</h4>
+          <p class="product-desc">Privacy-first VPN from the makers of Proton Mail.</p>
+          <div class="plans-row"><span class="plan-chip">1 Month</span><span class="plan-chip">12 Months</span></div>
+          <div class="price-row"><span class="price">$1.99</span></div>
+          <span class="availability"><i class="fa-solid fa-circle"></i> In Stock</span>
+          <div class="card-actions">
+            <a href="#" class="btn btn-primary">Buy Now</a>
+            <a href="#" class="btn btn-whatsapp" aria-label="Ask about Proton VPN on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+          <button class="quick-view-btn">Quick View</button>
+        </article>
+
+      </div>
+      <div class="show-more-wrap"><button class="btn btn-outline" id="show-more-vpn">Show More VPN Plans <i class="fa-solid fa-chevron-down"></i></button></div>
+    </div>
+
+    <!-- ===== SOFTWARE & AI TOOLS ===== -->
+    <div class="product-category-block" id="cat-software">
+      <h3><i class="fa-solid fa-laptop-code"></i> Software &amp; AI Tools</h3>
+      <div class="product-grid">
+
+        <article class="product-card" data-category="software" data-price="14.99">
+          <div class="product-card-top">
+            <span class="product-logo"><img src="https://placehold.co/100x100/e8462d/ffffff?text=365" alt="Microsoft 365 logo placeholder"></span>
+            <button class="wishlist-btn" aria-label="Add Microsoft 365 to wishlist"><i class="fa-regular fa-heart"></i></button>
+          </div>
+          <span class="category-badge">Office Productivity</span>
+          <h4>Microsoft Office 365</h4>
+          <p class="product-desc">Word, Excel, PowerPoint and Outlook with 1TB of cloud storage.</p>
+          <div class="plans-row"><span class="plan-chip">1 Year</span><span class="plan-chip">5 Devices</span></div>
+          <div class="price-row"><span class="price">$14.99</span></div>
+          <span class="availability"><i class="fa-solid fa-circle"></i> In Stock</span>
+          <div class="card-actions">
+            <a href="#" class="btn btn-primary">Buy Now</a>
+            <a href="#" class="btn btn-whatsapp" aria-label="Ask about Microsoft 365 on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+          <button class="quick-view-btn">Quick View</button>
+        </article>
+
+        <article class="product-card" data-category="software" data-price="9.99">
+          <div class="product-card-top">
+            <span class="product-logo"><img src="https://placehold.co/100x100/00c4cc/000000?text=CV" alt="Canva logo placeholder"></span>
+            <button class="wishlist-btn" aria-label="Add Canva to wishlist"><i class="fa-regular fa-heart"></i></button>
+          </div>
+          <span class="category-badge">Design Tools</span>
+          <h4>Canva Pro</h4>
+          <p class="product-desc">Premium templates, background remover and brand kits.</p>
+          <div class="plans-row"><span class="plan-chip">1 Month</span><span class="plan-chip">1 Year</span></div>
+          <div class="price-row"><span class="price">$9.99</span></div>
+          <span class="availability"><i class="fa-solid fa-circle"></i> In Stock</span>
+          <div class="card-actions">
+            <a href="#" class="btn btn-primary">Buy Now</a>
+            <a href="#" class="btn btn-whatsapp" aria-label="Ask about Canva Pro on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+          <button class="quick-view-btn">Quick View</button>
+        </article>
+
+        <article class="product-card" data-category="software" data-price="11.49">
+          <div class="product-card-top">
+            <span class="product-logo"><img src="https://placehold.co/100x100/da2c39/ffffff?text=AE" alt="Adobe Express logo placeholder"></span>
+            <button class="wishlist-btn" aria-label="Add Adobe Express to wishlist"><i class="fa-regular fa-heart"></i></button>
+          </div>
+          <span class="category-badge">Design Tools</span>
+          <h4>Adobe Express Premium</h4>
+          <p class="product-desc">Quick graphic design, video and social content creation.</p>
+          <div class="plans-row"><span class="plan-chip">1 Month</span><span class="plan-chip">1 Year</span></div>
+          <div class="price-row"><span class="price">$11.49</span></div>
+          <span class="availability"><i class="fa-solid fa-circle"></i> In Stock</span>
+          <div class="card-actions">
+            <a href="#" class="btn btn-primary">Buy Now</a>
+            <a href="#" class="btn btn-whatsapp" aria-label="Ask about Adobe Express on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+          <button class="quick-view-btn">Quick View</button>
+        </article>
+
+        <article class="product-card" data-category="software" data-price="6.49">
+          <div class="product-card-top">
+            <span class="product-logo"><img src="https://placehold.co/100x100/15a36a/ffffff?text=GR" alt="Grammarly logo placeholder"></span>
+            <button class="wishlist-btn" aria-label="Add Grammarly Premium to wishlist"><i class="fa-regular fa-heart"></i></button>
+          </div>
+          <span class="category-badge">AI Tools</span>
+          <h4>Grammarly Premium</h4>
+          <p class="product-desc">Advanced grammar, tone and clarity suggestions across every app.</p>
+          <div class="plans-row"><span class="plan-chip">1 Month</span><span class="plan-chip">1 Year</span></div>
+          <div class="price-row"><span class="price">$6.49</span></div>
+          <span class="availability"><i class="fa-solid fa-circle"></i> In Stock</span>
+          <div class="card-actions">
+            <a href="#" class="btn btn-primary">Buy Now</a>
+            <a href="#" class="btn btn-whatsapp" aria-label="Ask about Grammarly Premium on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+          <button class="quick-view-btn">Quick View</button>
+        </article>
+
+        <article class="product-card" data-category="software" data-price="13.99">
+          <div class="product-card-top">
+            <span class="product-logo"><img src="https://placehold.co/100x100/f24e1e/ffffff?text=FG" alt="Figma logo placeholder"></span>
+            <button class="wishlist-btn" aria-label="Add Figma to wishlist"><i class="fa-regular fa-heart"></i></button>
+          </div>
+          <span class="category-badge">Design Tools</span>
+          <h4>Figma Professional</h4>
+          <p class="product-desc">Collaborative interface design, prototyping and dev handoff.</p>
+          <div class="plans-row"><span class="plan-chip">1 Month</span><span class="plan-chip">1 Year</span></div>
+          <div class="price-row"><span class="price">$13.99</span></div>
+          <span class="availability"><i class="fa-solid fa-circle"></i> In Stock</span>
+          <div class="card-actions">
+            <a href="#" class="btn btn-primary">Buy Now</a>
+            <a href="#" class="btn btn-whatsapp" aria-label="Ask about Figma on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+          <button class="quick-view-btn">Quick View</button>
+        </article>
+
+        <article class="product-card" data-category="software" data-price="10.99">
+          <div class="product-card-top">
+            <span class="product-logo"><img src="https://placehold.co/100x100/1f2937/ffffff?text=11L" alt="ElevenLabs logo placeholder"></span>
+            <button class="wishlist-btn" aria-label="Add ElevenLabs to wishlist"><i class="fa-regular fa-heart"></i></button>
+          </div>
+          <span class="category-badge">AI Tools</span>
+          <h4>ElevenLabs Creator</h4>
+          <p class="product-desc">Natural-sounding AI voice generation and cloning for creators.</p>
+          <div class="plans-row"><span class="plan-chip">1 Month</span><span class="plan-chip">1 Year</span></div>
+          <div class="price-row"><span class="price">$10.99</span></div>
+          <span class="availability"><i class="fa-solid fa-circle"></i> In Stock</span>
+          <div class="card-actions">
+            <a href="#" class="btn btn-primary">Buy Now</a>
+            <a href="#" class="btn btn-whatsapp" aria-label="Ask about ElevenLabs on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+          <button class="quick-view-btn">Quick View</button>
+        </article>
+
+        <article class="product-card" data-category="software" data-price="7.99">
+          <div class="product-card-top">
+            <span class="product-logo"><img src="https://placehold.co/100x100/2e2e38/ffffff?text=CP" alt="Coursera Plus logo placeholder"></span>
+            <button class="wishlist-btn" aria-label="Add Coursera Plus to wishlist"><i class="fa-regular fa-heart"></i></button>
+          </div>
+          <span class="category-badge">Educational Plans</span>
+          <h4>Coursera Plus</h4>
+          <p class="product-desc">Unlimited access to thousands of courses and certificates.</p>
+          <div class="plans-row"><span class="plan-chip">1 Month</span><span class="plan-chip">1 Year</span></div>
+          <div class="price-row"><span class="price">$7.99</span></div>
+          <span class="availability"><i class="fa-solid fa-circle"></i> In Stock</span>
+          <div class="card-actions">
+            <a href="#" class="btn btn-primary">Buy Now</a>
+            <a href="#" class="btn btn-whatsapp" aria-label="Ask about Coursera Plus on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+          <button class="quick-view-btn">Quick View</button>
+        </article>
+
+        <article class="product-card" data-category="software" data-price="5.99">
+          <div class="product-card-top">
+            <span class="product-logo"><img src="https://placehold.co/100x100/58cc02/ffffff?text=DL" alt="Duolingo Super logo placeholder"></span>
+            <button class="wishlist-btn" aria-label="Add Duolingo Super to wishlist"><i class="fa-regular fa-heart"></i></button>
+          </div>
+          <span class="category-badge">Educational Plans</span>
+          <h4>Duolingo Super</h4>
+          <p class="product-desc">Ad-free lessons, unlimited hearts and progress tracking.</p>
+          <div class="plans-row"><span class="plan-chip">1 Month</span><span class="plan-chip">1 Year</span></div>
+          <div class="price-row"><span class="price">$5.99</span></div>
+          <span class="availability"><i class="fa-solid fa-circle"></i> In Stock</span>
+          <div class="card-actions">
+            <a href="#" class="btn btn-primary">Buy Now</a>
+            <a href="#" class="btn btn-whatsapp" aria-label="Ask about Duolingo Super on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+          <button class="quick-view-btn">Quick View</button>
+        </article>
+
+      </div>
+      <div class="show-more-wrap"><button class="btn btn-outline" id="show-more-software">Show More Software &amp; AI Tools <i class="fa-solid fa-chevron-down"></i></button></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= WHY CHOOSE US ================= -->
+<section id="why-choose-us">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">The Nexora Standard</span>
+      <h2>Why shoppers choose Nexora</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal d1"><i class="fa-solid fa-truck-fast"></i><h4>Fast Delivery</h4><p>Minutes, not days.</p></div>
+      <div class="why-card reveal d2"><i class="fa-solid fa-sack-dollar"></i><h4>Affordable</h4><p>Fair, honest pricing.</p></div>
+      <div class="why-card reveal d3"><i class="fa-solid fa-lock"></i><h4>Safe Payments</h4><p>Encrypted checkout.</p></div>
+      <div class="why-card reveal d4"><i class="fa-solid fa-comments"></i><h4>Customer Support</h4><p>Always reachable.</p></div>
+      <div class="why-card reveal d5"><i class="fa-solid fa-award"></i><h4>Trusted Marketplace</h4><p>Thousands of reviews.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CUSTOMER REVIEWS ================= -->
+<section id="reviews">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Social Proof</span>
+      <h2>What customers are saying</h2>
+    </div>
+    <div class="review-grid">
+      <div class="review-card reveal d1">
+        <div class="review-head">
+          <span class="review-avatar"><img src="https://placehold.co/80x80/6c5ce7/ffffff?text=A" alt="Avatar of customer Aarav"></span>
+          <div><div class="review-name">Aarav M.</div><div class="review-rating">★★★★★</div></div>
+        </div>
+        <p class="review-text">Order came through in a couple of minutes and support answered every question I had.</p>
+      </div>
+      <div class="review-card reveal d2">
+        <div class="review-head">
+          <span class="review-avatar"><img src="https://placehold.co/80x80/00d9c0/000000?text=S" alt="Avatar of customer Sara"></span>
+          <div><div class="review-name">Sara K.</div><div class="review-rating">★★★★★</div></div>
+        </div>
+        <p class="review-text">Prices are fair and the checkout process felt genuinely secure from start to finish.</p>
+      </div>
+      <div class="review-card reveal d3">
+        <div class="review-head">
+          <span class="review-avatar"><img src="https://placehold.co/80x80/f5b942/000000?text=D" alt="Avatar of customer Daniel"></span>
+          <div><div class="review-name">Daniel R.</div><div class="review-rating">★★★★☆</div></div>
+        </div>
+        <p class="review-text">Had one small hiccup with a plan and it was replaced the same day, no hassle at all.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq">
+  <div class="container">
+    <div class="section-head reveal" style="margin-left:auto;margin-right:auto;text-align:center;">
+      <span class="eyebrow">Support</span>
+      <h2>Frequently asked questions</h2>
+    </div>
+    <div id="faq-list">
+      <div class="faq-item" data-open="false">
+        <button class="faq-question" aria-expanded="false">How fast is delivery after payment? <i class="fa-solid fa-plus"></i></button>
+        <div class="faq-answer"><p>Most digital plans are delivered within a few minutes of a confirmed payment, directly to the contact details provided at checkout.</p></div>
+      </div>
+      <div class="faq-item" data-open="false">
+        <button class="faq-question" aria-expanded="false">What happens if a plan stops working? <i class="fa-solid fa-plus"></i></button>
+        <div class="faq-answer"><p>Covered plans are replaced free of charge within the support window listed on the product page.</p></div>
+      </div>
+      <div class="faq-item" data-open="false">
+        <button class="faq-question" aria-expanded="false">Which payment methods are supported? <i class="fa-solid fa-plus"></i></button>
+        <div class="faq-answer"><p>Checkout supports major cards, UPI and popular digital wallets, all processed over an encrypted connection.</p></div>
+      </div>
+      <div class="faq-item" data-open="false">
+        <button class="faq-question" aria-expanded="false">Can I contact support before buying? <i class="fa-solid fa-plus"></i></button>
+        <div class="faq-answer"><p>Yes — the WhatsApp, Telegram and Discord links in the contact section are staffed and happy to answer questions first.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NEWSLETTER ================= -->
+<section id="newsletter-section">
+  <div id="newsletter" class="reveal">
+    <h2>Get plan drops &amp; price alerts</h2>
+    <p>One short email a week — new plans, price drops, nothing else.</p>
+    <form class="newsletter-form" id="newsletter-form">
+      <input type="email" id="newsletter-email" placeholder="you@email.com" aria-label="Email address" required>
+      <button type="submit" class="btn btn-primary">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Get In Touch</span>
+      <h2>Talk to us anywhere you already are</h2>
+    </div>
+    <div class="contact-grid">
+      <a href="#" class="contact-card reveal d1"><i class="fa-brands fa-whatsapp"></i><h4>WhatsApp</h4></a>
+      <a href="#" class="contact-card reveal d2"><i class="fa-brands fa-telegram"></i><h4>Telegram</h4></a>
+      <a href="#" class="contact-card reveal d3"><i class="fa-brands fa-discord"></i><h4>Discord</h4></a>
+      <a href="#" class="contact-card reveal d4"><i class="fa-brands fa-instagram"></i><h4>Instagram</h4></a>
+      <a href="#" class="contact-card reveal d5"><i class="fa-solid fa-envelope"></i><h4>Email</h4></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer id="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#hero" class="logo"><span class="logo-mark">N</span>Nexora</a>
+        <p>A premium marketplace for streaming subscriptions, VPNs, software licenses and AI tools — all in one place.</p>
+        <div class="footer-social">
+          <a href="#" class="icon-btn" aria-label="Nexora on Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="icon-btn" aria-label="Nexora on Discord"><i class="fa-brands fa-discord"></i></a>
+          <a href="#" class="icon-btn" aria-label="Nexora on Telegram"><i class="fa-brands fa-telegram"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="#cat-streaming">Streaming</a></li>
+          <li><a href="#cat-vpn">VPN Services</a></li>
+          <li><a href="#cat-software">Software &amp; AI Tools</a></li>
+          <li><a href="#categories">All Categories</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support &amp; Policies</h4>
+        <ul>
+          <li><a href="#faq">Help Center</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Refund Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="current-year"></span> Nexora Marketplace. All rights reserved.</span>
+      <span>Placeholder content — replace before going live.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  document.getElementById('mobile-menu-btn').addEventListener('click', function(){
+    var nav = document.getElementById('primary-nav');
+    var expanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', String(!expanded));
+    nav.style.display = expanded ? 'none' : 'block';
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var btn = item.querySelector('.faq-question');
+    btn.addEventListener('click', function(){
+      var isOpen = item.getAttribute('data-open') === 'true';
+      document.querySelectorAll('.faq-item').forEach(function(i){
+        i.setAttribute('data-open','false');
+        i.querySelector('.faq-question').setAttribute('aria-expanded','false');
+      });
+      item.setAttribute('data-open', String(!isOpen));
+      btn.setAttribute('aria-expanded', String(!isOpen));
+    });
+  });
+
+  // Wishlist toggle
+  document.querySelectorAll('.wishlist-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var icon = this.querySelector('i');
+      icon.classList.toggle('fa-regular');
+      icon.classList.toggle('fa-solid');
+      var cart = document.getElementById('cart-count');
+    });
+  });
+
+  // Cart count demo (Buy Now increments count)
+  var cartCount = 0;
+  document.querySelectorAll('.product-card .btn-primary').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      cartCount++;
+      document.getElementById('cart-count').textContent = cartCount;
+    });
+  });
+
+  // Newsletter demo submit
+  document.getElementById('newsletter-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    var email = document.getElementById('newsletter-email');
+    email.value = '';
+    email.placeholder = 'Subscribed! Thank you.';
+  });
+
+  // Simple catalog search + category filter
+  function applyFilters(){
+    var query = (document.getElementById('catalog-search-input').value || '').toLowerCase();
+    var cat = document.getElementById('filter-category').value;
+    document.querySelectorAll('.product-card').forEach(function(card){
+      var name = card.querySelector('h4').textContent.toLowerCase();
+      var matchesQuery = name.indexOf(query) !== -1;
+      var matchesCat = !cat || card.getAttribute('data-category') === cat;
+      card.style.display = (matchesQuery && matchesCat) ? '' : 'none';
+    });
+  }
+  document.getElementById('catalog-search-input').addEventListener('input', applyFilters);
+  document.getElementById('filter-category').addEventListener('change', applyFilters);
+  document.getElementById('nav-search-input').addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){
+      e.preventDefault();
+      document.getElementById('catalog-search-input').value = this.value;
+      document.getElementById('products').scrollIntoView({behavior:'smooth'});
+      applyFilters();
+    }
+  });
+
+  // Product card hover glow position
+  document.querySelectorAll('.product-card').forEach(function(card){
+    card.addEventListener('mousemove', function(e){
+      var rect = card.getBoundingClientRect();
+      card.style.setProperty('--x', (e.clientX - rect.left) + 'px');
+      card.style.setProperty('--y', (e.clientY - rect.top) + 'px');
+    });
+  });
+
+  // Scroll reveal for elements below the fold
+  var revealTargets = document.querySelectorAll('.section-head, .feature-card, .category-card, .why-card, .review-card, .contact-card, .product-card');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('reveal');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealTargets.forEach(function(el){ io.observe(el); });
+
+  // Footer year
+  document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
